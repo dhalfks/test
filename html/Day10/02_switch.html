@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>switch문</title>
+</head>
+<body>
+    <h1>
+        switch case 문 : 식의 결과값이 일치하는 case에 값을 처리해주는 조건문
+    </h1>
+    <h3>
+        연산이나 탐색면에서 if문보다 속도가 조금 더 빠르다고 함.
+        <br>
+        switch(조건식){
+            case 값: 
+                처리식;
+                break;
+            case 값:
+                처리식;
+                break;
+            default:
+                처리식; 
+        }
+    </h3>
+    이름 : <input type="text" id="name"><br>
+    주민번호 : <input type="text" id="rNum"><br>
+    <button type="button" id="btn" onclick="result()" >계산</button>
+    <h3 id="result">
+
+    </h3>
+    <script>
+        function result(){
+            let name = document.getElementById('name').value; //string
+            let rNum = document.getElementById('rNum').value; //string ******-********
+            
+            let getNum = rNum.charAt(8); // 성별정보
+
+            let now = new Date();  //오늘날짜
+            let birth = rNum.substring(0, rNum.indexOf("-")); //생년월일 추출
+            console.log(birth);
+
+            // if (getNum < 3){ // 삼항 연산자 대신 쓸수 있는 구문
+            //     year = 19;
+            // }else {
+            //     year = 20;
+            // }
+            
+            let birth2= ((getNum<3) ? 19 : 20)+rNum.substr(0,2)+'-'+
+                        rNum.substr(2,2)+'-'+rNum.substr(4,2);//삼항연산자를 통해 구분
+            console.log(birth2);
+            let birth3 = new Date(birth2); // 생년월일에 대한 날짜정보
+            let week = birth3.getDay(); // 생년월일에 대한 요일정보
+            let week2 ='';
+            switch(week){
+                case 0: week2='일'; break;
+                case 1: week2='월'; break;
+                case 2: week2='화'; break;
+                case 3: week2='수'; break;
+                case 4: week2='목'; break;
+                case 5: week2='금'; break;
+                case 6: week2='토'; break;
+            }
+            let year = Number(birth.substring(0,2)) ;
+            // let age = now.getFullYear() - (year + 1900)+1; // 1900년대
+            let age = now.getFullYear() - (year + ((getNum<3) ? 1900 : 2000))+1; // 1900/2000년대 구분
+
+            console.log(year);
+            console.log(age);
+            
+           
+            let mw ='';
+            if(getNum == 1 || getNum == 3){
+                mw ="남";
+            }else {
+                mw="여";
+            }
+            console.log(mw);
+            document.getElementById('result').innerText = 
+            `이름: ${name}, 생년월일: ${birth3.toLocaleDateString()}(${week2}), 나이: ${age}, 성별: ${mw}`;
+        }
+    </script>
+
+    <script>
+        // let date = new Date(str);
+        // console.log(date);
+        // let rNum = "990101-2222222";
+        // let str = 19+rNum.substring(0,2);
+        // console.log(str);
+    </script>
+</body>
+</html>

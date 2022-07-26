@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for, while, do~while</title>
+</head>
+<body>
+    <h1>
+        while, do~while문은 반복횟수를 예상하기 어려울때, 반복 횟수를 특정할 필요가 없을 때 주로 사용 <br>
+        for : 반복횟수가 정해져있을 때 순차적인 실행.
+    </h1>
+    <ul>
+        <li>
+            while(식){    // 식이 true일때 반복
+                처리문;  // 반복처리
+                증감식;  // 무한루프에 빠질수 있음.
+            }
+        </li>
+        <li> 반드시 1번은 처리 되는 구문 <br>
+            do{
+                처리문;
+                증감식;
+            } while(식);
+        </li>
+        <li>
+            for(초기화 ; 조건식 ; 증감연산식) {
+                처리문;
+            }
+        </li>
+    </ul>
+    <!-- a, b 값이 있을 때 a를 b번 곱하는 값을 출력 -->
+    <!-- 3, 4 => 3 * 3 * 3 * 3  결과를 출력 -->
+    <!-- input number a / b를 받기  버튼클릭하면 -->
+    <!-- h3 결과 적기 -->
+    A : <input type="number" id="paramA">
+    B : <input type="number" id="paramB">
+    <button type="button" id="btn" onclick="calc();">제곱계산기</button>
+    <h3 id="result">
+
+    </h3>
+    <script>
+        function calc(){
+            let a = Number(document.getElementById('paramA').value); //숫자로 받기
+            let b = Number(document.getElementById('paramB').value); //숫자로 받기
+            let result = 1; // 곱하기 
+            // for(let i = 1; i<=b ;i++){
+            //     result = result * a;  // result *= a;
+            // }
+
+            let count=0; // 반복횟수를 결정
+            while(count < b && !(b == 1) ){
+                result *= a;
+                count++; 
+            }
+            
+            document.getElementById('result').innerText = 
+            `${a}의 ${b} 제곱한 결과는 ${result}입니다.`;
+        }
+    </script>
+</body>
+</html>

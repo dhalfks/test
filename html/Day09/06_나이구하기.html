@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이계산하기</title>
+</head>
+<body>
+    <!-- 화면에서 연도를 입력받아 나이를 출력
+    프롬프트로 받기 : let year = prompt("태어난 연도"); -->
+    <h3 id="result">
+
+    </h3>
+    <script>
+        let now = new Date(); // 오늘날짜 생성.
+        let toYear = now.getFullYear(); // 오늘 연도만 반환
+        let toMonth = now.getMonth()+1;  // 0~11월로 반환 
+        let toDate = now.getDate(); // 일을 반환 1~31
+        let week = now.getDay() // 요일 반환 0(일요일)~6(토요일)
+        // getHours() / getMinutes() / getSeconds() 
+        
+        let today = now.toLocaleDateString(); // 현재날짜
+        let time = now.toLocaleTimeString();  // 현재시간
+        let dateTime = now.toLocaleString();  // 현재 날짜/시간
+
+        let year = prompt("태어난 연도를 입력해주세요.","YYYY");
+        let age = toYear - year + 1;
+        
+
+        document.getElementById('result').innerText=`당신의 나이는 ${age}세 입니다.`;
+
+        console.log(toYear);
+        console.log(toMonth);
+        console.log(toDate);
+        console.log(week);
+        console.log(today);
+        console.log(time);
+        console.log(dateTime);
+    </script>
+</body>
+</html>

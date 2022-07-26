@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function testFunc(p1, p2, p3, p4, p5=1) {
+            console.log(p1, p2, p3, p4, p5);
+          console.log(arguments);
+          console.log(arguments.length);
+          console.log(arguments[0], arguments[1], arguments[2], arguments[3], arguments[4]);
+          return p1 + p2 - p3 * p4 / p5;
+        }
+        console.log(testFunc(1, 2, 3, 4, 5)); // return => 0.6xxxxxxxx
+        console.log(testFunc(1, 2, 3, 4)); // return => -9
+    
+      </script>
+    <script>
+        // 파라미터 개수가 적으면 f는 무조건 undefined
+        // => 그러므로 옵셔널 파라미터는 마지막에!
+        function myFunc(a, b, c, d = 100, e = 0, f) {
+            console.log(arguments);
+          console.log(a, b, c, d, e, f);
+          console.log(a+d);
+        }
+        myFunc(1, 2, 3);
+  
+        // function myFunction(x, py) {
+        //   let y = py;        
+        //   if (y === undefined) {
+        //     y = 2;
+        //   }
+        //   console.log(x, y);
+        // }
+  
+        function myFunction(x, y=2) {
+          console.log(x, y);
+          return x+y;
+        }
+        console.log(myFunction(1));
+      </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest parameter</title>
+</head>
+<body>
+    <h1>
+        Rest Parameter : 나머지(유휴의, 이외의, 남는것 들) 파라미터
+    </h1>
+    <ul>
+        <li>
+            arguments 프로퍼티를 사용하면 
+            전체 파라미터를 arguments를 통해서만 접근
+            불편한 경우가 있음.
+        </li>
+        <li>
+            함수나 메서드 내부에서 재할당, 내부 연산 위해 필요한 파라미터가 있고,
+            값만 전달받기 위한 파라미터가 있을 경우 
+            분리해서 파라미터를 가져오면 편리하다.
+        </li>
+        <li>
+            (연산 및 재할당) 파라미터는 일반파라미터로.. 
+            나머지는 통합하여 1개의 이름으로 배정
+        </li>
+        <li></li>
+    </ul>
+    <script>
+        function restPramaFunc(a,b, ...others){
+            console.log(a+b);
+            console.log(others); //나머지들은 출력만
+            for(const arg of others){
+                console.log(`others : ${arg}`);
+            }
+        }
+        restPramaFunc(10,20,30,40,50,60,70,80,90,100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class PersonClass {
+          constructor(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+          }
+          get personInfo() {
+            return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;
+          }
+          
+        }
+        const my = new PersonClass('oh','miran','42','red');
+        my.setAge = 23;
+        
+        console.log(my);
+        const personObject = {
+          firstName: "",
+          lastName: "",
+          age: 0,
+          eyeColor: "",
+          setAllInfo: function (first, last, age, color) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+          },
+          get personInfo() {
+            return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;
+          },
+          set setFirstName(first) {
+            this.firstName = first;
+          },
+          set setLastName(last) {
+            this.lastName = last;
+          },
+          set setAge(age) {
+            this.age = age;
+          },
+          set setEyeColor(color) {
+            this.eyeColor = color;
+          },
+        };
+        function PersonObject(first, last, age, eye) {
+          this.firstName = first;
+          this.lastName = last;
+          this.age = age;
+          this.eyeColor = eye;
+          this.getPersonInfo = function () {
+            return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;
+          };
+        }
+        const myInfo = new PersonObject("kitae", "park", 44, "black");
+        myInfo.setAge = 40;
+        console.log(myInfo);
+        
+      </script> 
+</body>
+</html>

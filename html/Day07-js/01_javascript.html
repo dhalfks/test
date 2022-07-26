@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+
+</head>
+<!-- javascript : 클라이언트에서 실행되는 스크립트 언어 동적 웹 페이지 표현 
+     JSP : Java Sublet Page 로그인, 페이지 게시판 -->
+
+<body>
+    <h1>
+    자바스크립트 변수
+  </h1>
+  <h3>
+    변수란? 특정시점(시간, 공간)에 원하는 값을 갖고 있는 코드(존재)
+  </h3>
+  <h2>
+    변수의 특징
+  </h2>
+  <ol>
+    <li>
+      코드가 실행되는 시점의 상태값을 갖고 있는 개념
+    </li>
+    <li>
+      변하는 값을 주로 다룬다고 해서 변수라고 칭함
+    </li>
+    <li>
+      자바스크립트에서는 변수를 선언(배정, 할당, 정의)할 때 let, var 키워드를 사용
+    </li>
+    <li>
+      ES6(2015) 부터는 let 키워드를 사용하기를 적극 권장함!
+    </li>
+  </ol>
+  <script>
+    // 변수의 선언.
+    // let 을 이용하여 변수를 선언.
+    let myFirstJS;  //선언만
+    myFirstJS = 100;  // 값을 할당 (초기화)
+    myFirstJS = '가나다';
+    let num = 100; // 선언과 할당.
+    num2 = 200; // 선언하지 않고 변수 사용 가능은 한데 가급적 사용X
+
+    // 변수 선언 name, age, addr 
+    let name = 'Oh Miran';
+    let age = 42;
+    let addr='inchon';
+    let hobby='baseball';
+    let favor='coffee';
+
+    console.log('이름 : ', name);
+    console.log('나이 : ' + age +'세');
+    console.log("주소 : ",addr + '시');
+    console.log(`취미: ${hobby}`); // 백틱 내부에 코드 삽입 ${} 통해 가능.
+    console.log(`좋아하는 것 : ${favor}`);
+    console.log(`6*6 = ${6*6}`);
+    // 내년에 내 나이 출력
+    console.log(`내년에는 몇살? ${age+1}살`);
+
+    // 백틱 (`` : 키보드의 ~모양) : 표현식 삽입 가능.
+    // 상수 const 고정된 값을 사용하는 의미 규칙, 참조값 
+    const AGE = 42; 
+    // AGE = 43; // 불가능!!
+  </script>
+</body>
+</html>

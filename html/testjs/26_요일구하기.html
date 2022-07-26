@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요일구하기</title>
+</head>
+<body>
+    <h3>오늘은</h3>
+    <button type="button" id="btn" onclick="weekday1();">today</button>
+    <h3 id="week"></h3>
+    <input type="text" id="date">
+    <button type="button" onclick="weekday1()"></button>
+    <h3 id="date1">
+
+    </h3>
+    <script>
+
+        let now = new Date();
+        console.log(now.toLocaleDateString());
+        let today = now.toLocaleDateString();  // 오늘날짜
+        console.log(today);
+        
+        let str = document.getElementById('date').value;
+        console.log(str.toString());
+        let date = new Date(str);
+        console.log(date.toLocaleDateString());
+        let day = date.getDay();
+        // let day1 = date.getDay();
+        console.log(day);
+        function weekday1(){
+            let week='';
+            if(day == 0 ){
+                week = '일';
+            }else if(day == 1 ){
+                week = '월';
+            }else if(day == 2 ){
+                week = '화';
+            }else if (day == 3){
+                week = '수';
+            }else if (day == 4){
+                week = '목';
+            }else if (day == 5){
+                week = '금';
+            }else {
+                week = '토';
+            }
+            document.getElementById('week').innerText=`${today} (${week})`;
+            // document.getElementById('date1').innerText=`${week}`;
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <h1>
+        advanced for : 향상된 for문, 배열의 정렬
+    </h1>
+    <ul>
+        <li> 
+            for of : for (let value of array){ code...}  : 배열을 하나씩 꺼내 출력
+        </li>
+        <li>
+            for in : for (let value in object){ code...} : 객체를 하나씩 꺼내 출력
+        </li>
+        <li>
+            배열의 정렬 : 정렬은 문자 기반으로 정렬이 됨. 
+        </li>
+        <li>
+            array.sort() : 문자기준 오름차순 정렬 (ascending)
+        </li>
+        <li>
+            array.reverse() : 문자 기준 역정렬 (descending) 내림차순
+        </li>
+        <li>
+            정렬할 배열의 원소가 숫자일 경우 콜백함수를 이용하여 내부 연산기법을 활용한다.
+        </li>
+        <li>
+            array.sort(function(a,b){return a - b}) : 숫자 오름차순
+        </li>
+        <li>
+            array.sort(function(a,b){return b - a}) : 숫자 내림차순
+        </li>
+        <li></li>
+    </ul>
+    <!-- 1~45랜덤 숫자 6개를 생성하여 배열에 저장 후 출력 (콘솔에 출력) -->
+    <script>
+        const myArr = [];
+        for (let i=0; i<6;i++){
+            myArr.push(Math.floor(Math.random()*45)+1); //1~45까지 랜덤수 소수점 버리고 저장
+        }
+        console.log(myArr); //배열자체를 출력
+        
+        // 정렬 후 출력 -- 오름차순 정렬
+        myArr.sort(function(a, b){
+            return a - b;
+        });
+
+        //배열의 요소를 꺼내서 출력
+        // 향상된 for문을 활용  for of : for (let value of array){ code...}
+        for(let arr of myArr){
+            console.log(arr);
+        }
+        // 배열(Array)안에 객체(Object) 구성
+        const cars = [
+            {type : "Volvo", year: 2016},
+            {type : "KIA", year : 2020},
+            {type : "BMW", year : 2012}
+        ];
+        // year을 기준으로 정렬 오름차순정렬하여 출력
+        cars.sort(function(a,b){
+            return a.year - b.year;
+        });
+        console.log(cars);
+        for(let arr of cars){
+            console.log(arr);
+        }
+
+        //객체안의 문자값을 정렬
+        cars.sort(function(a,b){
+            let x = a.type.toLowerCase();
+            let y = b.type.toLowerCase();
+            if(x > y) {return 1;}
+            if(x < y) {return -1;}
+            return 0;
+        });
+        console.log(cars);
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>색속성</title>
+    <!-- 
+        색상관련 속성
+        - color : 글자색
+        - background-color : 배경색
+        - border-color : 테두리색
+        색상지정하는 방법
+        - 이미 지정된 이름을 사용하는 방법 : red, bule, green
+        - 색상코드를 사용하는 방법 : #ff0000
+        - RGB코드를 사용하는 방법 : rgb(255,0,0)
+        - rgba코드를 사용하는 방법 : rgba(255,0,0,0)
+        - a : 투명도 값을 추가 0~1
+     -->
+     <style>
+        div{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .color{
+            color: aquamarine;
+        }
+        .bgcolor{
+            background-color: yellow;
+        }
+        .bordercolor{
+            border-style: dotted;
+            border-color: rgb(255,0,0) ;
+        }
+
+        /* .bordercolor :hover */
+        .bordercolor:hover{
+            background-color: yellow;
+        }
+        p{
+            font-size: 20px;
+        }
+        /* p:nth-child(even){
+            color:blue; 
+        } */
+        .p1, .p2{
+            color: aqua;
+        }
+     </style>
+</head>
+<body>
+    <div class="color">안녕하세요(글자색)</div>
+    <div class="bgcolor">안녕하세요(배경색)</div>
+    <div class="bordercolor">안녕하세요(테두리색)</div>
+    <!-- p태그에 font-size : 20 설정 -->
+    <!-- 1,3번 p태그에 색상 파랑 설정 -->
+    <p class="p1">1.안녕하세요</p>
+    <p class="p2">2.안녕하세요</p>
+    <p class="p3">3.안녕하세요</p>
+</body>
+</html>

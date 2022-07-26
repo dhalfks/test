@@ -1,0 +1,17 @@
+li{
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.image, .img2{
+    width: 500px;
+    border: 1px solid black;
+
+}
+a{
+    text-decoration-line:none ;
+}
+/* .img2{
+    width: 500px;
+    border: 1px solid black;
+} */

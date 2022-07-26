@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <h1>
+        객체 : 식별할 수 있는 것을 상세 특징을 표현하려하는 형식 (java map 유사한 방식)
+    </h1>
+    <ul>
+        <li>
+            const 상수로 선언하는 것이 일반적. : 객체의 지속성을 확보하기 위해서
+        </li>
+        <li>
+            {} 안에  key:value, key:value, key:value ... 으로 표현
+        </li>
+        <li>
+            key : 중복 불가 (고유키)
+        </li>
+        <li>
+            객체 내부에서 사용할 수 있는 속성 값의 데이터 타입의 제한이 없다
+        </li>
+        <li>
+            객체 내부에 속성값으로 익명함수로 정의할수 있음. 메서드라고 부른다 속성명이 함수이름이 됨.
+        </li>
+    </ul>
+    <script>
+        const car = {name:'myCar', year:2000};
+        // car = 100; //불가능
+        // 선언한 객체를 지킬수 있음 - 지속성 확보 
+        let car2 = {name:'superCar', hp:200};  // object
+        car2 = 100; // 가능  object 형식은 사라짐 
+    </script>
+    <script>
+        const dog = {
+            name : '멍멍이',
+            sound : '멍멍',
+            say : function () {
+                console.log(this.sound);
+            }
+        };
+
+        const cat = {
+            name:'야옹이',
+            sound : '야옹'
+        };
+
+        cat.say = dog.say; //cat 에 dog.say 값을 연결
+        dog.say();
+        cat.say();
+        console.log(dog.name);
+        dog.say();
+
+        // 나를 소개하는 me 객체 생성
+        // 이름, 나이, 주소, 좋아하는 것, 취미, 수강(년도, 과정명, 과목), 함수(수강 출력)
+        const me = {
+            name : '오미란',
+            age : 42,
+            addr : 'inchon',
+            favor : 'coffee',
+            hobby : 'baseball',
+            avail : {
+                year : 2022,
+                title : '빅데이터과정',
+                project: 'javascript',
+                intro: function(){
+                    console.log(`year: ${this.year}, title: ${this.title}, project: ${this.project}`);
+                    // console.log(me.avail.title); //이방식도 가능.
+                },
+
+            },
+        };
+        console.log('------------------------');
+        console.log(me.name);
+        console.log(me.age);
+        console.log(me.addr);
+        console.log(me.favor);
+        console.log(me.hobby);
+        console.log(me.avail.title);
+        me.avail.intro();
+        console.log(me.avail.intro());
+
+        console.log('-----------------------');
+        console.log(me["name"]); // 출력 가능.
+        console.log(me["avail"].title);
+        console.log(me["avail"]["title"]);
+        console.log(me.avail["title"]);
+        console.log(me["avail"]["intro"]());
+        me["avail"]["intro"]();
+        console.log('------------------');
+    </script>
+    <script>
+        // musician ={name, age, playlist:{ first, second, third}, function};
+        const musician = {
+            name:'IU',
+            age:32,
+            playlist: {
+                first:'블루밍',
+                second:'너의의미',
+                third:'ccc',
+            },
+            jukebox: function(first, second, third){
+                console.log(`${this.playlist.first}, ${this.playlist.second}, ${this.playlist.third}`); // 고정된 key 값.
+                return `${first}, ${second}, ${third}`; //파라미터 값에 따라 달라지는 형태
+            },
+        };
+        let playList = musician.jukebox("너랑나","좋은날","밤편지");
+        console.log(playList);
+        console.log(musician.jukebox("너랑나","좋은날","밤편지"));
+    </script>
+</body>
+</html>

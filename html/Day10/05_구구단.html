@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩반복문</title>
+    <style>
+        td{
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h3>구구단 출력</h3>
+    <button type="button" id="guguBtn"> 구구단 출력하기 </button>
+    <!-- 구구단 1단 출력 -->
+    <div id="gugu">
+
+    </div>
+
+    <!-- 
+    2x1=2  3x1=3.........................................9x1=9
+    2x2=4
+    .
+    .
+    .
+    2x9=18...............................................9x9=81 -->
+    <script>
+        document.getElementById('guguBtn').addEventListener('click', function(){
+            let incre = 1;  //1~9 증가하는 뒷쪽값
+            let str = "<table>";
+            while(incre < 10){  // 10보다 작으면 반복
+                let line = "<tr>";
+                let dan = 2;
+                while(dan < 10){  // 10보다 작으면 반복
+                    line += `<td> ${dan} * ${incre} = ${dan*incre}</td>`;
+                    dan++; // 단 증가
+                }
+                incre++; // 뒷쪽 값도 증가
+                str += `${line}</tr>`;
+            }
+            str += "</table>";
+            document.getElementById('gugu').innerHTML = str;
+        });
+    </script>
+
+    <script>
+        for(let j=2; j<=9;j++){
+            document.write("<div>");
+            document.write(`<h3> ${j} 단 </h3>`);
+            for(let i= 1; i<=9; i++){
+                document.write(j+ " * "+i+" = "+i*j+"<br>");
+            }
+            document.write("</div>");
+        }
+    </script>
+</body>
+</html>

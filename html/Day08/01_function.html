@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <script>
+        // function 함수명(파라미터값, 파라미터2) {
+        //     기능 구현;
+        //     return ;
+        // }
+        function func(){
+            console.log("첫번째 함수");
+            console.log('head태그 안에 작성된 함수');
+            console.log('html문서가 로드되면서 함수가 선언됩니다.');
+            console.log('head 태그에 선언된 함수들은 초기설정, 선언식 형태의 위주로 작성하는게 일반적');
+        }
+        func();  //위에 작성한 함수 호출
+    </script>
+    <script src="function.js"></script>
+    <script>
+        outerFunc();
+    </script>
+</head>
+<body>
+    <h1>함수(Function) : 특정 기능을 수행하기위한 코드 실행기 - 호출되어야만 작동</h1>
+     <ul>
+        <li>
+            function 키워드를 사용하여 선언</li>
+        <li>
+            함수명 : 기능을 함축하여 의미있는 함수명으로 작성</li>
+        <li>
+            함수명 뒤에 ( ) 파라미터를 사용하여 선언할 수 있다. (없어도 상관없음.) </li>
+        <li>
+            이때 파라미터값은 자유도가 높아 다양한 형태로 사용이 가능.</li>
+        <li>
+            () 다음 { } 기능 로직을 작성</li>
+        <li>
+            return이라는 키워드를 사용하여 함수의 종료시점을 지정할 수 있음.
+        </li>
+        <li>
+            return은 함수 실행 종료 역할을 함과 동시에 결과값을 호출한 지점으로 반환할 수 있다.
+        </li>
+        <li>
+            함수 선언방법은 크게 3가지로 구분. 
+        </li>
+        <li></li>
+     </ul>
+     <script>
+        function func2(){
+            console.log('두번째 함수');
+            console.log('body 태그 내부에 작성');
+        }
+        func2();
+        func();
+        outerFunc();
+     </script>
+     <script>
+        console.log("------------------");
+        func();
+     </script>
+</body>
+</html>

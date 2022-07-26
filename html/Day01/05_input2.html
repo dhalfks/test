@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input속성</title>
+</head>
+<body>
+    <!-- 모든 태그는 속성을 가진다.
+        <태그명 속성1="값1" 속성2="값2" 속성3=값3 속성4>
+        속성3에서 값3은 공백을 만나기 전까지는 문자열로 인식 값을로 인식. 
+        class="a b" class의 속성 값으로 a b
+        class=a b class의 속성 값은 a만.  b는 다른 속성으로 인식 
+        속성4처럼 값이 없는 속성도 존재
+        값을 쓰지 않아도 적용되는 속성 readonly, disabled -->
+    <!-- 
+        ---input 태그의 속성---
+        type : input 태그의 종류를 선택하는 속성
+        tabindex : 탭순서 정할 때 활성화 되는 순서 
+        disabled : 비활성화
+        value : input태그의 값을 지정
+        placeholder : 미리보기 문자열 지정
+        name : 서버로 데이터를 전송할 때 전송할 값의 변수명
+        name이 없으면 submit버튼으로도 데이터가 전송되지 않음.
+    -->
+    <form action="">
+        <input type="text" name="a" tabindex="1" value="name" readonly="true">
+        <input type="text" name="b" tabindex="4" value="age" readonly>
+        <input type="text" name="c" tabindex="2" disabled>
+        <input type="text" name="d" tabindex="3" value="123" placeholder="test">
+        <input type="submit" value="전송">
+    </form>
+    <form action="">
+        <!-- checked : check박스나 radio에서 사용하면 기본값이 check된 상태 -->
+        <input type="checkbox" checked>선택1
+        <input type="radio" checked>선택2
+    </form>
+</body>
+</html>

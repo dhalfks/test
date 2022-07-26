@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform속성</title>
+    <!-- 
+        transform : 회전, 이동, 확대 등을 할 때 사용
+        - translate(x1,y1) : x축으로 1만큼, y축으로 1만큼 이동
+        - translateX(x1) : x축으로 1만큼 이동
+        - translateY(y1) : y축으로 1만큼 이동
+        - scale(w,h) : 가로를 w배만큼, 세로로 H배 만큼 조절 , 0으로 주면 안보임
+        - scaleW(w), sacalH(h) : 각자 조절 가능
+        - rotate(a) : a각도 만큼 시계방향으로 회전
+        - skew(xa,ya) : x축으로 xa만큼, y축으로 ya만큼 기울림
+        - skew(xa), skew(ya) 
+        - 회전, 기울림 deg
+     -->
+     <style>
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: blueviolet;
+            border: 1px solid black;
+        }
+        .box1{
+            animation: translate infinite 3s;
+        }
+        @keyframes translate {
+            0%{ 
+                transform: translate(0,0);
+            }
+            50%{
+                transform: translate(50px, 50px);
+            }
+            100%{
+                transform: translate(0,0);
+            }
+        }
+        .box2{
+            animation: scale infinite 3s;
+        }
+        @keyframes scale{
+            0%{
+                transform: scale(1,1);
+            }
+            50%{
+                transform: scale(2,2);
+            }
+            100%{
+                transform: scale(1,1);
+            }
+        }
+        .box3{
+            animation: rotate infinite 3s;
+            font-size: 2em;
+            color: white;
+            text-align: center;
+        }
+        @keyframes rotate{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+        .box4{
+            animation: skew infinite 3s;
+        }
+        @keyframes skew{
+            0%{
+                transform: skew(0deg,0deg);
+            }
+            50%{
+                transform: skew(30deg, 30deg);
+            }
+            100%{
+                transform: skew(0deg, 0deg);
+            }
+        }
+     </style>
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">hello</div>
+    <div class="box4"></div>
+</body>
+</html>

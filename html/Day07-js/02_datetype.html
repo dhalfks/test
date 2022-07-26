@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 타입</title>
+</head>
+<body>
+    <h1>
+        변수나 상수에 할당하는 수 있는 값의 종류, 데이터 구분 및 활용을 위해 매우 중요
+    </h1>
+    <ul>
+        <li>
+            숫자 : Number : 정수(1,100,0,-5), 실수(소수점이 있는 숫자), NaN(Not a Number : 숫자가 아님이라는 값)
+        </li>
+        <li>
+            문자 : String : '',"",`` 모든 값을 문자
+        </li>
+        <li>
+            불리언 : boolean : true/false : 참/거짓
+        </li>
+        <li>
+           객체 : Object : 1개 이상의 데이터가 특정 구조를 가지고 있는 형태 (아무것도 없는 사실도 1개로 취급)
+        </li>
+        <li>
+            배열 : Array : [1,2,3 ... ] 형태로 이루어진 집합 (순서, 길이 있음)
+        </li>
+        <li>
+            미정된 값 : undefined : 값이 할당되지 않음
+        </li>
+        <li>
+            알수없는 값 : null : 무언가 있긴 하지만 파악이 안됨
+        </li>
+        <li>
+            data type 알고 싶을 때 : typeof 변수 or 값
+        </li>
+        <li>
+            기본자료형(Primative Type) : 값이 메모리에 직접 할당
+            number, boolean, String(참조자료형 사용자의 편의성에 의해 기본자료형으로 사용가능.)
+        </li>
+        <li>
+            참조자료형(Reference Type) : 값이 저장되어 있는 메모리의 주소를 참조하는 형태. 주소값이 할당
+            String, Object, Array, function, null, undefined 
+        </li>
+    </ul>
+    <script>
+        let num = 100; // 숫자 형식
+        let str ='문자';
+        let bool = true;
+        let obj1={ }; // 이 안에 특정형식을 만들 수 있음.
+        let obj2= new Object(); // 자바스크립트에서 제공하는 내장된 객체 사용
+        let arr1=[1,2]; // 대괄호 안에 콤마로 분리된 데이터 
+        let arr2=[1, 'a',3,'b']; // 가능은 하지만 추천하지 않음.
+        let arr3=new Array(); // 자바스크립트에서 제공하는 내장된 Array객체
+        let undi = undefined;
+        let undi2;
+        let nullable = null;
+
+        console.log(`num 형식: ${typeof num}   값 : ${num}`);
+        console.log(`str 형식: ${typeof str}   값 : ${str}`)
+        console.log(`bool 형식: ${typeof bool}   값 : ${bool}`)
+        console.log(`obj1 형식: ${typeof obj1}   값 : ${obj1}`)
+        console.log(`obj2 형식: ${typeof obj2}   값 : ${obj2}`)
+        console.log(`arr1 형식: ${typeof arr1}   값 : ${arr1}`)
+        console.log(`arr2 형식: ${typeof arr2}   값 : ${arr2}`)
+        console.log(`arr3 형식: ${typeof arr3}   값 : ${arr3}`)
+        console.log(`undi 형식: ${typeof undi}   값 : ${undi}`)
+        console.log(`undi2 형식: ${typeof undi2}   값 : ${undi2}`)
+        console.log(`nullable 형식: ${typeof nullable}   값 : ${nullable}`)
+        
+    </script>
+</body>
+</html>

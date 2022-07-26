@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box속성</title>
+    <!-- 
+        박스크기 속성
+        - 컨텐츠 
+            - width : 가로
+                - block 태그는 기본 100%로 설정되어 있음.
+                - 100%란 부모 크기의 100%를 가짐.
+            - min-width : 최소 가로 길이 지정
+            - max-width : 최대 가로 길이 지정
+            - heigth : 세로
+                - 컨텐츠가 없으면 0, 있으면 컨텐츠 높이만큼 자동 할당
+        - content-box : 컨텐츠 영역을 기준으로 크기를 정함. (패딩값을 더해서 할당)
+        - border-box : 테두리를 기준으로 실제 지장한 값으로 (패딩값 포함X)
+        - initial : 기본값 설정
+        - inherit : 부모값 상속
+     -->
+     <style>
+        *{
+            margin: 0px;
+        }
+        div{
+            margin: 20px;
+            padding: 20px;
+            border: 20px solid black;
+            width: 500px;
+            border-radius: 20px;
+        }
+        .cb{
+            box-sizing: content-box;
+        }
+        .bb{
+            box-sizing: border-box;
+        }
+     </style>
+</head>
+<body>
+    <div class="cb">
+        <p>content-box</p>
+    </div>
+    <div class="bb">
+        <p>border-box</p>
+    </div>
+</body>
+</html>

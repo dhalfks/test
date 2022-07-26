@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-index속성</title>
+    <!-- 
+        요소가 겹쳐있을 경우 위/아래 요소들을 결정하는 속성
+        값은 정수로 숫자가 클수록 위로 올라오고, 작으면 아래로 내려감.
+        z-index 속성이 없을 경우 코드상 나중에 입력한 것일 수록 위로 올라옵니다. 
+     -->
+     <style>
+        div{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .x{
+            background-color: blue;
+            top: 20px;
+            left: 200px;
+            z-index: 10;
+        }
+        .y{
+            background-color: darkblue;
+            top: 50px;
+            left: 250px;
+            z-index: 0;/* z-index 속성을 주지 않으면 0 취급.*/
+        }
+        .z{
+            background-color: lightblue;
+            top: 80px;
+            left: 230px;
+            z-index: 5;
+        }
+     </style>
+</head>
+<body>
+    <div class="x"></div>
+    <div class="y"></div>
+    <div class="z"></div>
+</body>
+</html>

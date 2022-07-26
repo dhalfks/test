@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+</head>
+<body>
+    <h1>
+        이벤트 객체는 전역객체로써 모든 태그에 객체를 참조시킬수 있다!
+    </h1>
+    <ul>
+        <li>
+            a태그와 button 태그에 이벤트를 주로 참조시켜 클릭에 대한 반응을 기대할 수 있는 구조로 만드는게 일반적
+        </li>
+        <li>
+            a태그는 href 속성에 의해 자체 이동(동기화방식)이 구현되어서 별도의 이동속성을 막는 코드가 필요
+        </li>
+        <li>
+            이벤트 객체를 부여하는 방식에는 크게 3가지 방식이 있다.
+        </li>
+    </ul>
+    <h3>
+        연습을 위해서 콘솔에 출력 / html문서(document영역)에 출력하는 방식
+    </h3>
+     <ul>
+        <li>
+            화면출력 영역 : document영역 (객체)라고 한다.
+        </li>
+        <li>
+            html 태그는 html element, 속성 attribute, 일반 텍스트 textNode라고 함
+        </li>
+        <li>
+            html로 출력하기 : innerHTML이라는 property를 사용
+        </li>
+        <li>
+            text로 출력하기 : innerText라는 property를 사용
+        </li>
+        <li>
+            html element를 id값으로 객체를 가져오기 : getElementById('idName')
+        </li>
+        <li>
+            html element를 css 선택자를 사용하여 가져오기 : querySelector('#idName')
+        </li>
+        
+     </ul>
+     <!-- 버튼생성 -->
+     <button type="button" onclick="eventFunc();">클릭해보세요</button>
+     <button type="button" onclick="eventFunc2(100);">클릭해보세요</button>
+     <button type="button" onclick="alert('경고창 입니다.');">경고창 띄우기</button>
+     <button type="button" id="testbtn">버튼클릭</button>
+     <button type="button" onclick="eventFunc3()">클릭</button>
+     <!-- 새로운 버튼 생성 후 클릭하면 글자를 표시 -->
+     <h1 id="printResult">
+
+     </h1>
+     <h1 id="printResult2">
+
+     </h1>
+     <!-- h1 태그로 글자 표시 위치 만들기 -->
+     <script>
+        // 이벤트 설정
+        function eventFunc(){
+            let printResult = document.getElementById('printResult');
+            printResult.innerText='이 버튼은 클릭하여 테스트 하는 버튼입니다.';
+        }
+
+        function eventFunc2(num){
+            let printResult = document.getElementById('printResult2');
+            printResult.innerHTML = '<span style="color:red;">스팬태그</span>를 사용했어요~!!' + num;
+        }
+
+        document.getElementById('testbtn').addEventListener('click', () =>{
+            alert('test버튼을 클릭했습니다.');
+        });
+
+        function eventFunc3(){
+            let name = prompt('이름을 입력하세요');
+            document.getElementById('printResult2').innerHTML=`<b> ${name}</b> test page`;
+        }
+     </script>
+</body>
+</html>

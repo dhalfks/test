@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  단어입력받기 : <input type="text" id="strData">
+  <button type="button" id="btn" >입력</button>
+  <h1 id="result"></h1>
+  <script>
+    function isPalindrome(){
+        let word = document.getElementById('strData').value;
+      let wordLen = Math.floor(word.length / 2); // 6 -> 3, 7 -> 3
+      for(let i=0; i < wordLen; i++){
+        if (word.charAt(i) == word.charAt(word.length-1-i)) {
+          return true;
+        }
+      }
+      return false;
+    }
+    document.getElementById('btn').addEventListener('click', function(){
+      let strData = document.getElementById('strData').value;
+      console.log(`${isPalindrome(strData) ? "팰린드롬 단어임!" : "팰린드롬 단어 아님"}`);
+      document.getElementById('result').innerText 
+       = `${isPalindrome(strData) ? "팰린드롬!" : "팰린드롬 아님!!!"}`;
+    });
+  </script>
+</body>
+</html>

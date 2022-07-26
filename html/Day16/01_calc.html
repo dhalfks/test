@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<body>
+   <div class="container">
+        <div class="area top">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="C">C</button><br>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="-">-</button><br>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="*">*</button><br>
+            <button type="button" value=".">.</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="/">/</button>
+        </div>
+        <h1 class="area bottom" id="printFomula"></h1>
+   </div> 
+   <script>
+        const fomula = document.getElementById('printFomula');
+        let fomulaValue ="";
+
+        //연산의 결과를 나타낼 함수 
+        function operation(f, o, l){
+            let result = 0;
+            switch(o){
+                case "+": result = f + l; break;
+                case "-": result = f - l; break;
+                case "*": result = f * l; break;
+                case "/": result = f / l; break;
+                default:  break;
+            }
+            return result.toFixed(2);
+        }
+
+        // 연산을 하기위한 f o l 따로 구분해주기 35225 + 5
+        function extractValue(strValue){
+            console.log(strValue);
+            let firstNum = strValue.substring(0,strValue.indexOf(" ")); // substring(startindex, indexnum)
+            let operator = strValue.substr(strValue.indexOf(" ")+1, 1); // substr(startindex, count);
+            let lastNum = strValue.substring(strValue.lastIndexOf(" ")+1);
+            console.log(firstNum);
+            console.log(lastNum);
+            console.log(`${firstNum}, ${operator}, ${lastNum}`);
+
+            return operation(parseFloat(firstNum), operator, parseFloat(lastNum)); //parse 오타
+        }
+
+        document.querySelector('.container').addEventListener('click', function(e){
+            let btnValue = e.target.value;
+            console.log(btnValue);
+            console.log(typeof btnValue);
+            
+            if(!isNaN(btnValue)){ // 숫자일 때
+                fomulaValue += btnValue;
+            }else { // 숫자가 아닐경우
+                if(btnValue != undefined){ //화면의 다른 부분을 클릭한게 아님
+                    switch(btnValue){
+                        case "C":
+                            fomulaValue = "";
+                            fomula.innerText = "";
+                            break;
+                        case ".":
+                            fomulaValue += btnValue; // 기존 값에 붙이기
+                            break;
+                        default:
+                            let result =""; // 사칙연산에 대한 결과 변수
+                            if(btnValue == "="){
+                                result = extractValue(fomulaValue);  //클릭한 숫자의 나열(문자열)
+                                fomulaValue = result; //새로 추가한 코드 결과만 출력하기
+                                btnValue = ""; 
+                            }
+                            
+                            fomulaValue += ` ${btnValue} `;
+
+                            // if(result.toString()){
+                            //     fomulaValue += result;
+                            // }
+                            console.log(fomulaValue);
+                            break;
+                        }   
+
+                }
+            }
+            fomula.innerText = fomulaValue;
+        });
+   </script>
+</body>
+</html>

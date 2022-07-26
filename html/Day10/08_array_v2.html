@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 관련 메서드</title>
+</head>
+<body>
+    <h1>
+        배열과 관련된 메서드 
+    </h1>
+    <ul>
+        <li>
+            join() : 배열 원소 사이에 문자를 삽입하여 새로운 문자열을 만들어주는 메서드
+        </li>
+        <li>
+            array.push(value) : 배열의 마지막에 원소 추가 <br>
+            array[array.length] = value; 와 같은 의미 , 배열의 길이를 리턴
+        </li>
+        <li>
+            pop() : 배열의 마지막 원소를 제거. 제거한 원소를 리턴
+        </li>
+        <li>
+            shift() : 배열의 첫 요소를 제거. 제거한 요소를 리턴
+        </li>
+        <li>
+            unshift(value) : 배열의 가장 앞에 원소를 추가, 추가한 후에 배열의 길이 리턴
+        </li>
+    </ul>
+    <script>
+        const fruits = ['사과','바나나'];
+        console.log(fruits);
+        fruits[fruits.length]='오렌지';
+        console.log(fruits);
+        let newLength = fruits.push('키위'); // length 를 반환
+        console.log(fruits);
+        console.log(newLength);
+        let last = fruits.pop();
+        console.log(last);
+        console.log(fruits);
+        let first = fruits.shift(); // 가장 앞에있는 사과를 제거하고 반환
+        console.log(fruits);
+        console.log(first);
+        newLength = fruits.unshift('딸기');
+        console.log(fruits);
+        fruits.push('망고');
+        // 바나나 위치(index) 찾기
+        let pos = fruits.indexOf('바나나');
+        console.log(pos);
+        // 배열에서 항목을 제거하는 방법 // index부터 n개의 항목 제거 
+        // array.splice(start, count, value1, value2 ... ) : 추출한 값들은 새로운 배열로 만들어짐.
+        let remove = fruits.splice(pos,2 , '수박','복숭아'); 
+        console.log(fruits);
+        console.log(remove);
+
+        document.write(`<p> ${fruits} </p>`);
+        let fruits2 = fruits.join(' / ');
+        document.write(`<p> ${fruits2} </p>`);
+        console.log(fruits2);
+    </script>
+</body>
+</html>

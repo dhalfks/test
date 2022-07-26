@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class, constructor(생성자)</title>
+</head>
+<body>
+   <h1>
+    클래스, 객체, 생성자
+   </h1>
+   <script>
+    class Car{
+        constructor(name, year){ // 자바스크립트에서는 생성자는 1개만 허용, java에서는 생성자가 여러개 가능. 
+            this.name = name;
+            this.year = year;
+            this.model='';
+        }
+    }
+    // const myCar = {name:'포르쉐', year:2022}; //방법1
+    let myCar1 = new Car('포르쉐', 2022); // 방법2
+    let myCar2 = new Car('그렌져', 2021);
+    myCar2.model='XG';
+
+    let myCar3 = new Car();
+    myCar3.name= '소나타';
+    myCar3.year = 2022;
+    myCar3.model='gold';
+
+    console.log(myCar1);
+    console.log(myCar1.name, myCar1.year);
+    console.log(myCar2);
+    console.log(myCar3.name, myCar3.year, myCar3.model);
+   </script>
+</body>
+</html>

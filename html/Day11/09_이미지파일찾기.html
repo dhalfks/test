@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        input text에 파일명.확장자를 입력하여 전송버튼을 누르면 이미지파일인지 검사하여 이미지파일이면 정상파일입니다. 이미지 파일이 아니면 이미지파일만 가능합니다. 라고 출력하기
+    </h1>
+    <form action="">
+        파일명 : <input type="text" id="fileName">
+        <button type="button" id="sbmBtn">전송</button>
+    </form>
+    <h2 id="printZone"></h2>
+    <script>
+        function imageFileValid(fn){
+            // 입력받은 fileName 값이 이미지확장자에 맞으면 true, false
+            // 대소문자 상관없이 jpg = JPG
+            // jpg.jpg => 그림파일, jpg.txt => X
+            let fileName = fn.toLowerCase();  // 대문자여도 소문자로 변환
+            // arr.match : 배열에서 사용
+            if(fileName.match(/(.jpg|.gif|.png|.jpeg)/gi)){
+                return true;
+            }else {
+                return false;
+                console.log(fn);
+            }
+
+            return fileName.endsWith("png") ? true :
+            fileName.endsWith("jpg")? true :
+            fileName.endsWith("jpeg")? true :
+            fileName.endsWith("gif")? true : false;
+
+            // if(fileName.endsWith("png")){
+            //     return true;
+            // }else if(...){ ....
+
+            // }
+        }
+        document.getElementById('sbmBtn').addEventListener('click', function(){
+            let fileName = document.getElementById('fileName').value;
+
+            let imgTrue =`<span class="green">정상파일입니다.</span>` ;
+            let imgFalse=`<span class="red">이미지파일만 가능합니다.</span>`;
+            document.getElementById('printZone').innerHTML = 
+            imageFileValid(fileName) ? imgTrue : imgFalse;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>복습문제1</title>
+    <!-- 500*500px 박스를 만들어 안녕하세요 글자 표현 
+        - 글자속성 : 크기, 글꼴, 정렬 
+        - 박스속성 : bg-color, border, -->
+    <!-- 버튼생성 : 버튼을 누르면 naver.com 으로 이동하도록 생성 
+        링크시 생기는 기본 밑줄 없애기 -->
+        <style>
+            .box{
+                width: 500px;
+                height: 500px;
+                border: 1px solid black;
+                background-color: bisque;
+                box-shadow: 5px 5px 5px gray;
+                font-size: 30px;
+                font-weight: bold;
+                text-align: center;
+                /* vertical-align: middle; => inline / inline-block 속성만 먹히는 세로정렬 속성 */
+            }
+            .btn{
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            a{
+                text-decoration-line: none;
+            }
+        </style>
+</head>
+<body>
+    <div class="box">안녕하세요</div>
+    
+    <a href="http://naver.com" target="_blank">
+        <button class="btn">버튼</button>
+    </a>
+</body>
+</html>

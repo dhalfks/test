@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(27, 188, 155);
+}
+.container{
+    width: 300px;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+}
+input{
+    padding: 10px;
+}
+.text-field{
+   font-size: 0.75em; 
+   border: 0px;
+   /* box-sizing: border-box; 로 설정했기 때문에 100% */
+   width: 100%;
+    margin-bottom: 10px;
+    /* margin: 0px 0px 10px;  같은방식 */
+    border-radius: 5px;
+}
+.btn-input{
+    font-size: 0.75em;
+    border: 0px;
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    background-color: rgb(27, 188, 155);
+    color: white;
+}
+.links{
+    text-align: center;
+    margin: 0px;
+}
+.links a{
+    font-size: 0.75em;
+    color: gray;
+    /* text-decoration-line:none ; */
+}

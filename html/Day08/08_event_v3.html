@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+</head>
+<body>
+    <h1 id="heading">javascript</h1>
+    <h3 id="main">위 글자를 클릭해보세요.</h3>
+    <!-- 글자 생성 후 글자를 클릭하면 파랑색으로 변경 -->
+
+    <script>
+        let heading = document.querySelector('#heading');
+        heading.onclick = function(){
+            heading.style.color = 'red';
+        }
+
+        let main = document.querySelector('#main');
+        main.onclick = function(){
+            main.style.setProperty("font-size","30px");  //css의 style 속성 변경
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weekday</title>
+</head>
+<body>
+    <h3>오늘은 ??? </h3>
+    <button type="button" id="btn" onclick="weekday();">Today</button>
+    <h3 id="week">
+        <!-- 오늘 날짜와 요일 출력 -->
+
+    </h3>
+    <input type="date" id="date">
+    <button type="button" onclick="weekday();">weekday</button>
+    
+    <script>
+                
+        function weekday(){
+            let date = document.getElementById('date').value;
+            // let str = date;
+            let now = new Date(date);
+            let today = now.toLocaleDateString(); // 연.월.일 형태로
+            console.log(today);
+            let day = now.getDay(); // 요일 번호 (0=일, ...)
+            console.log(day);
+            let week ='';
+            if(day == 0){
+                week = '일';
+            }else if(day == 1){
+                week = '월';
+            }else if(day==2){
+                week='화';
+            }else if(day==3){
+                week='수';
+            }else if(day==4){
+                week='목';
+            }else if(day==5){
+                week='금';
+            }else {
+                week='토';
+            }
+            document.getElementById('week').innerText = `${today}(${week})`;
+        }
+    </script>
+</body>
+</html>

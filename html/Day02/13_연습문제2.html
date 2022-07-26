@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제2</title>
+    <!-- div.box1 박스를 클릭하면 naver로 이동
+        박스 크기 100*50px  색속성은 알아서...
+        박스 모서리를 둥글게... 20px
+        마우스를 올리면 배경색이 변경되면서 마우스 포인터 변경
+        box text = button  (글자는 가운데오게끔...)-->
+        <style>
+            .box1{
+                box-sizing: border-box;
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+                background-color:darkblue;
+                border-radius: 20px;
+                font-size: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+                font-weight: 700;
+                padding-top: 10px;
+                color: white;
+            }
+            .box1:hover{
+                background-color: cornsilk;
+                color: black;
+                cursor: pointer;
+            }
+            a{
+                text-decoration-line:none;
+            }
+        </style>
+</head>
+<body>
+    <a href="http://naver.com" target="_blank">
+        <div class="box1">button</div>
+    </a>
+</body>
+</html>

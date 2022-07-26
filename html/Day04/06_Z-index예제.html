@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position/z-index예제</title>
+    <!-- margin : auto => margin auto 속성을 이용하면 컨텐츠를 가운데 정렬 시킬 수 있다. -->
+    <!-- margin : 위 오른쪽 아래 왼쪽  -->
+    <style>
+        .container{
+            margin: auto;
+            width: 300px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .top, .bt{
+            width: 90%;
+            height: 50px;
+            border: 3px solid black;
+            margin: 10px auto;
+            font-size: 2em;
+            font-weight: 700;
+            padding-top:10px ;
+        }
+        .mid{
+            width: 90%;
+            height: 250px;
+            border: 3px solid black;
+            margin: 10px auto;
+            position: relative; /* 자식 박스의 position : absolute를 부모 기준으로 정하기 위해 설정 */
+        }
+        /* mid의 자식 div에 너비/높이 지정 */
+        .mid>div {
+            width: 100px;
+            height: 100px;
+            box-shadow: -5px -5px 5px gainsboro;
+        }
+        .red{
+            background-color: red;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+        .green{
+            background-color: green;
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            z-index: 150;
+        }
+        .blue{
+            background-color: blue;
+            position: absolute;
+            top: 120px;
+            left: 120px;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top">텍스트</div>
+        <div class="mid">
+            <div class="red"></div>
+            <div class="green"></div>
+            <div class="blue"></div>
+        </div>
+        <div class="bt">텍스트</div>
+    </div>
+</body>
+</html>

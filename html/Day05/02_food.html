@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배달의민족</title>
+    <style>
+        @font-face{
+            font-family: jua;
+            src: url(/font/Jua/Jua-Regular.ttf);
+        }
+        body{
+            font-family: jua;
+            background-color: #f0e8d9;
+            color: #58595b;
+        }
+        div{
+            text-align: center;
+        }
+        .header{
+            margin: 75px;
+        }
+        .header>h1{
+            font-size: 64px;
+        }
+        .header>h3{
+            font-size: 32px;
+            margin-top: 30px;
+        }
+        .menu{
+            width: 300px;
+            margin: auto;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+        #sushi{
+            width: 300px; /* div박스 사이즈*/
+            height: 200px;
+            margin: 0;
+            background-image: url(/image/sushi.jpg);
+            background-size: 300px 200px;  /* 이미지 사이즈 */
+            border-radius: 10px 10px 0px 0px;
+        }
+        /* 다른이미지  */
+        #hamburger{
+            width: 300px; /* div박스 사이즈*/
+            height: 200px;
+            margin: 0;
+            background-image: url(/image/hamburger.jpg);
+            background-size: 300px 200px;  /* 이미지 사이즈 */
+            border-radius: 10px 10px 0px 0px;
+        }
+        #chicken{
+            width: 300px; /* div박스 사이즈*/
+            height: 200px;
+            margin: 0;
+            background-image: url(/image/chicken.jpg);
+            background-size: 300px 200px;  /* 이미지 사이즈 */
+            border-radius: 10px 10px 0px 0px;
+        }
+        #bibimbab{
+            width: 300px; /* div박스 사이즈*/
+            height: 200px;
+            margin: 0;
+            background-image: url(/image/bibimbab.jpg);
+            background-size: 300px 200px;  /* 이미지 사이즈 */
+            border-radius: 10px 10px 0px 0px;
+        }
+        .menu>div>h3{
+            margin: 0;
+        }
+        .menu div:last-child{
+            padding: 20px;
+        }
+        .menu div>p:first-child{
+            margin-top: 50px;
+            margin-bottom: 20px;
+            /* color: aqua; */
+        }
+        .menu>div>p:last-child{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>배달의 민족</h1>
+        <h3>넌 배달할 때가 제일 멋있어</h3>
+    </div>
+    <div class="menu">
+        <div id="sushi"></div>
+        <div>
+            <h3>맛있는 스시</h3>
+            <p>
+                주머니가 가벼운 당신의 마음까지 생각한 착한 가격!
+            </p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="hamburger"></div>
+        <div>
+            <h3>맛있는 햄버거</h3>
+            <p>
+                주머니가 가벼운 당신의 마음까지 생각한 착한 가격!
+            </p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="chicken"></div>
+        <div>
+            <h3>맛있는 치킨</h3>
+            <p>
+                주머니가 가벼운 당신의 마음까지 생각한 착한 가격!
+            </p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    <div class="menu">
+        <div id="bibimbab"></div>
+        <div>
+            <h3>맛있는 비빔밥</h3>
+            <p>
+                주머니가 가벼운 당신의 마음까지 생각한 착한 가격!
+            </p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+</body>
+</html>

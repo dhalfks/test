@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 속성</title>
+    <!-- 
+        text-indent : 들여쓰기 값 => 들여쓰기 길이
+        text-align : 정렬 값: left, right, center, justify(양쪽정렬)
+        text-decoration : 줄긋기
+            - none : 없음.
+            - underline : 밑줄
+            - overline : 윗줄
+            - line-through : 가운데줄(취소선)
+        
+     -->
+     <!-- 
+        css 표준 단위
+        em : 배수, 현재 값을 기준으로 배수 2em
+        rem : 배수, 문서의 값을 기준으로 배수
+        % : 현재값을 기준으로 %
+        px : 고정된 픽셀값.
+        cm / mm /in : 센티미터 / 밀리미터 / 인치 1in = 96px
+        pt : 포인터, 1pt = 1/72 in
+        pc : 피카소, 1pc => 12pt
+        deg : 각도
+      -->
+     <style>
+        p{
+            text-indent: 20px;
+            text-align: center;
+            text-decoration-line: underline;
+        }
+        .line{
+            /* text-overflow  텍스트가 범위를 넘어갔을 때 ellipsis (...) */
+            /* white-space : 글자들이 범위를 넘어갔을 때 처리하는 방법을 정하는 속성
+                - nowrap : 한줄로 처리
+                */
+            /* overflow : 넘어간 글자들을 어떻게 처리할지 정하는 속성
+                - hidden : 안보이게 감춤
+                - scroll : 스크롤 바 생김.
+                - auto : 넘어가면 스크롤이생기고, 안넘으면 안보이게 */
+            /* 텍스트가 범위를 넘어갔을 때 처리하는 set */
+           text-overflow: ellipsis; 
+           white-space: nowrap;
+           overflow: hidden;
+           border: 1px solid red;
+           width: 60%;
+           text-shadow: 5px 5px 5px gray;
+        }
+     </style>
+</head>
+<body>
+    <p>
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+    </p>
+    <p class="line">
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+        안녕하세요. 홍길동입니다
+    </p>
+</body>
+</html>

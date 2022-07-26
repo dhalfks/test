@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>검색창예제</title>
+    <style>
+        .search-left{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #19ce60;
+            float: left;
+            position: relative;  /* left>input 박스의 위치 지정을 위해서 relative로 변경 */
+            border-radius:3px 0 0 3px ; /* radius : 위 오른쪽 아래 왼쪽 */
+            /* border-radius: 3px; */
+        }
+        .search-btn{
+            width: 52px;
+            height: 52px; /* left box 50 + border 1+1 = 52px */
+            background-color: #19ce60;
+            border: none;
+            border-radius: 0 3px 3px 0;
+            /* border-radius: 3px; */
+        }
+        .search-left>input{
+            width:240px ;
+            height: 30px;
+            position: absolute; /* 부모 박스 기준에서 절대값 위치*/
+            top: 7px ;
+            left: 10px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            
+        }
+        .search-btn>.material-symbols-outlined{
+            color: white;
+        }
+        .search-left>.material-symbols-outlined{
+            position: absolute;  /* 부모 박스 기준에서 절대값 위치*/
+            top: 13px;
+            left: 260px;  /* inputbox(content+border+left 감안) 240px+2px10px = 252px 보다 크게 */
+            color: rgb(227, 227, 227);
+        }
+        .search-left>.material-symbols-outlined:hover{
+            color: rgb(186, 186, 186);
+            cursor: pointer;
+        }
+        .search-btn:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-box">
+        <div class="search-left">
+            <input type="text" placeholder="검색값">
+            <span class="material-symbols-outlined">
+                keyboard
+            </span>
+        </div>
+        <button class="search-btn">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+        </button>
+    </div>
+</body>
+</html>

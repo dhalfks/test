@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list속성</title>
+    <!-- 
+        list-style-type : 마커 타입 지정
+        list-style-image : 마커 자리에 이미지 지정
+        list-style-position : 마커 위치 (안/밖)
+        list-style : 위 3가지 속성을 한번에 지정
+     -->
+     <style>
+        .inside{
+            list-style-type: square;
+            /* list-style-image: url(/image/강아지1.jpg); */
+            
+            list-style-position: inside;
+        }
+        .outside{
+            list-style-position: outside;
+        }
+        ul{
+            background-color: bisque;
+        }
+        li{
+            background-color: aquamarine;
+        }
+        .none{
+            padding: 0;
+            list-style-type: none; /* 마카 타입 X*/
+        }
+     </style>
+</head>
+<body>
+    <ul class="inside">
+        <li>사과</li>
+        <li>오렌지</li>
+        <li>배</li>
+    </ul>
+    <ul class="outside">
+        <li>사과</li>
+        <li>오렌지</li>
+        <li>배</li>
+    </ul>
+    <ul class="none">
+        <li>사과</li>
+        <li>오렌지</li>
+        <li>배</li>
+    </ul>
+</body>
+</html>

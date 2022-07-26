@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>What time is it?</title>
+	<style>
+		body {
+			font-size:2em;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<button type="button" onclick="date()" id="date1">날짜</button>
+	<h1 id="date">
+
+	</h1>
+	<script>
+		// function date(){
+		// 	let now = new Date();
+		// 	let display = now.toLocaleDateString();
+		// 	document.querySelector('#date').innerHTML=`오늘날짜 : ${display}`;	
+
+		// }
+		let now = new Date();
+		let display = now.toLocaleDateString();
+		let date1 = document.querySelector('#date1');
+		date1.onclick = function(){
+			document.querySelector('#date').innerHTML=`오늘날짜 : ${display}`;
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="pic" src="/image/busan.jpg" alt="">
+    <script>
+        let pic = document.getElementById('pic');
+        pic.addEventListener('mouseover', changePic);
+        pic.addEventListener('mouseout',originPic);
+
+        function changePic(){
+            pic.src="/image/busan2.jpg";
+        }
+        function originPic(){
+            pic.src="/image/busan.jpg";
+        }
+    </script>
+</body>
+</html>

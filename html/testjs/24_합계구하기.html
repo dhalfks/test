@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 100px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myForm">
+        <fieldset>
+            <legend>성적확인</legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="text" id="kor"><br>
+            영어 : <input type="text" id="eng"><br>
+            수학 : <input type="text" id="math"><br>
+            <button type="button" id="sbmBtn" onclick="clickEvent();">계산</button>
+        </fieldset>
+    </form>
+    <h3 id="sum">
+
+    </h3>
+    <script>
+        function clickEvent(){
+            
+            let name = document.getElementById('name').value;
+            let kor = document.getElementById('kor').value;
+            let eng = document.getElementById('eng').value;
+            let math = document.getElementById('math').value;
+            if(kor >100 || kor < 0){
+                alert('1~100사이의 값을 입력해주세요.');
+            }
+            kor = parseInt(kor);
+            kor = Number(kor);
+            eng = parseInt(eng);
+            eng = Number(eng);
+            math = parseInt(math);
+            math = Number(math);
+            console.log(typeof kor);
+
+            let sum = kor + eng + math;
+            let avg = Math.round(sum/3) ;
+            // let avg = sum/3 ;
+            let acount ='';
+            if (avg >= 90) {
+                acount = 'A';
+            }else if(avg>=80){
+                acount = 'B';
+            }else if(avg >=70){
+                acount = 'C';
+            }else if(avg >=60){
+                acount = 'D';
+            }else {
+                acount = 'F';
+            }
+            console.log(acount);
+            document.getElementById('sum').innerText = `이름: ${name} , 합계: ${sum} , 평균: ${avg}, 합격여부: ${acount}`;
+        }
+    </script>
+</body>
+</html>

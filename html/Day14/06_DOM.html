@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="header">
+        DOM(Document Object Model) : 문서 객체 모델 <br>
+        html tag를 element로 가져오는 메서드
+    </h1>
+    <ul>
+        <li>
+            엘리먼츠로 가져오는 메서드 byId, byClassName, byTagName
+        </li>
+        <li class="list">
+            document.getElementById('idName') : 리턴 단일 엘리먼츠
+        </li>
+        <li class="list">
+            document.getElementsByClassName('className') : 리턴 복수 엘리먼츠 : HTMLCollection 타입으로 저장
+        </li>
+        <li class="list">
+            document.getElementsByTagName('tagName') : 리턴 복수 엘리먼츠 : HTMLCollection 타입으로 저장
+        </li>
+    </ul>
+    <script>
+        const h1 = document.getElementById('header');
+        const lis = document.getElementsByClassName('list');
+        const ul = document.getElementsByTagName('ul');
+        const li = document.getElementsByTagName('li');
+
+        console.log(h1);
+        console.log(lis);
+        console.log(ul);
+        console.log(li);
+    </script>
+</body>
+</html>

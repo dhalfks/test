@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font속성</title>
+    <!-- 
+        글자모양, 크기, 속성, 굵기
+        font-family : 글자체를 여러개 지정 serlf
+            - 지정하려는 폰트를 ,로 나열
+            - 한글 폰트의 경우, 한글이름과 영어이름을 같이 사용
+            - 마지막은 기본형으로 지정
+            - 폰트 이름이 "맑은 고딕" arial 띄어쓰기가 없는 경우 "" 생략가능.
+        font-size : 크기
+        font-style : 글자 속성
+        font-weigth : 굵기 설정.
+        font:style->weight->size->family
+     -->
+     <style>
+        p{
+            /* font-family: "맑은 고딕","Malgun Gothic", serif;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: bold; */
+            font:italic bold 20px "맑은 고딕", Arial, serif;
+        }
+     </style>
+</head>
+<body>
+    <p>
+        안녕하세요
+    </p>
+</body>
+</html>

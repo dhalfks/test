@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>펠린드롬 인지 ? </title>
+</head>
+<body>
+    <h1>
+        팰린드롬 : 거꾸로 읽어도 같은 단어 기러기, 스위스, 토마토, 수박이박수
+    </h1>
+    단어입력 : <input type="text" id="strData">
+    <button type="button" id="btn">입력</button>
+    <h3 id="result"></h3>
+    <script>
+        // return true/ false
+        function isPalindrome(word){
+            // 기러기 3/2 = 1.5,  6 / 2=>3,  7/2 =>3
+            let wordLen = Math.floor(word.length / 2); 
+            for(let i=0; i<wordLen; i++){
+                // word.charAt(word.length-1-i) 끝에서부터 좁여들어오는 값
+                if(word.charAt(i) != word.charAt(word.length-1-i)){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        document.getElementById('btn').addEventListener('click', function(){
+            let strData = document.getElementById('strData').value; // 입력된단어
+            document.getElementById('result').innerText =
+            `${isPalindrome(strData) ? "팰린드롬!!!" : "팰린드롬 아님!"}`;
+        })
+    </script>
+</body>
+</html>

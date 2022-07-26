@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float속성</title>
+    <!-- 
+       박스를 block 속성으로 만들게 되면 enter로 인한 공백이 발생. (1px) 
+       그 공백에 대한 제거와 박스의 정렬상태를 맞추기 위해 설정하는 속성
+     -->
+     <style>
+        .p-box{
+            background-color: yellow;
+            height: 100px;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-bottom: 1px solid black;
+            display: inline-block;
+            float: left;
+        }
+        /* .p-box::after{
+            content: "";
+            clear: both;
+            display: block;
+        } */
+        .right{
+            border-right: 1px solid black;
+        }
+
+        
+     </style>
+</head>
+<body>
+    <div class="p-box">
+        <div class="box left">1</div>
+        <div class="box mid1">2</div>
+        <div class="box mid2">3</div>
+        <div class="box right">4</div>
+    </div>
+</body>
+</html>

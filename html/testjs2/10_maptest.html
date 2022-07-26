@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">과목</label> <input type="text" id="sub"><br>
+        <label for="">점수</label> <input type="text" id="num"><br>
+        <button type="button" onclick="add();">추가</button>
+        <button type="button" id="btn" >출력</button>
+            <button type="button" id="tot">합계</button>
+    </form>
+    <ul id="result"></ul>
+    <h3 id="sum"></h3>
+     <script>
+    const myMap = new Map();
+        let sum = 0;
+        let avg=0;
+        let tot='';
+        
+    function add(){
+        let sub = document.getElementById('sub').value;
+        let num = Number(document.getElementById('num').value);
+        
+        myMap.set(sub,num);
+        
+        document.getElementById('sub').innerText="";
+        document.getElementById('num').innerText="";
+        sum+= num;
+        avg = Math.round(sum/myMap.size);
+        if(avg >= 60){
+            tot="합격";
+        }else{
+            tot="불합격";
+        }
+        console.log(myMap);
+        console.log(sum);
+    }
+    
+    document.getElementById('btn').addEventListener('click', function(){
+    
+        document.getElementById('result').innerHTML = "";
+        myMap.forEach(function (value, key, self) {
+        document.getElementById('result').innerHTML += `<li>과목: ${key} 점수: ${value}</li>`;
+        });
+    
+    })
+     document.getElementById('tot').addEventListener('click', function(){
+                document.getElementById('sum').innerHTML = `과목합계 : ${sum} , 평균 : ${avg}, 합격여부 : ${tot}`
+    })
+    </script>
+    </body>
+    
+</html>

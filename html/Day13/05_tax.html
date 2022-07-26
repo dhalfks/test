@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합소득세 계산</title>
+</head>
+<body>
+    <!-- 종합소득세 = 과세표준 * 소득세율 -->
+    <!-- 과세표준 = 총소득액 - 총공제인정액 -->
+    <!-- 총소득액 = 시간당 pay, 하루근무시간, 1년 근무일수를 받기 -->
+    <!-- 총 공제인정액 = 랜덤으로 약식 신고 30~40% 산출  -->
+    <!-- 세율표 과세표준 구간에 따라 세액 - 누진공제 -->
+    시간당 pay : <input type="number" id="hourPay">만원<br>
+    하루 근무시간 : <input type="number" id="workHour">시간<br>
+    1년 근로일수 : <input type="number" id="workDays">일<br>
+    <button type="button" id="btn">데이터 전송</button>
+    <h3 id="result"></h3>
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            let pay = parseFloat(document.getElementById('hourPay').value);
+            let hour = parseInt(document.getElementById('workHour').value);
+            let days = parseInt(document.getElementById('workDays').value);
+            let salary = pay * hour * days; //총소득액
+            // (Math.random() * 개수) + 시작값
+            let ratio = ((Math.random()*11)+30)/100; //30%~40%
+            ratio = ratio.toFixed(2);
+            if(ratio > 0.4) ratio = 0.4; 
+
+            // salary-(salary*ratio) => salary*(1-ratio) 같은의미
+            let targetIncome = salary*(1-ratio); //과세표준
+            let tax = 0;
+            if(targetIncome <=1200){
+                tax = targetIncome * 0.06;
+            }else if(targetIncome <=4600){
+                tax = targetIncome*0.15 - 108;
+            }else if(targetIncome <=8800){
+                tax = targetIncome*0.24 - 522;
+            }else{
+                tax = targetIncome*0.35 - 1490;
+            }
+
+            document.getElementById('result').innerText = 
+            `시간당 pay : ${pay}만원, 하루 ${hour}시간동안 1년 ${days}일 출근하면
+             총 수입 : ${salary}만원, 총 공제율 : ${ratio*100}% 
+             종합소득세 : ${Math.round(tax)}만원을 납부해야합니다.`;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 호칭 로직 완성 -->
+    <!-- 부르는 사람 : 성별, 나이 -->
+    <!-- 대상 : 성별, 나이 -->
+    <!-- 남동생, 여동생 / 형, 누나, 언니, 오빠 -->
+    <!-- 클럽에 제출 -->
+
+    <h1>호칭 정리</h1>
+    나의 성별(m(남)/f(여)) : <input type="text" id="myGen"> <br>
+    나의 나이 : <input type="text" id="myAge"> <br>
+    너의 성별(m(남)/f(여)) : <input type="text" id="yourGen"> <br>
+    너의 나이 : <input type="text" id="yourAge"><br>
+    <button type="button" id="btn" > 호칭 </button>
+    <h3 id="howCall"></h3>
+
+    <script>
+        function printCall(howCall){
+            document.getElementById('howCall').innerText = howCall;
+        }
+
+        function whatShouldCallYou(mg,ma,ug,ua){
+            let howCall = '';
+            if(ma == ua){
+                howCall = "반갑다 친구야~!!";
+            }else if(ma > ua) {  // 동생의 경우
+                howCall = (ug =='m') ? '남동생이네~!!' : '여동생~~!!!';
+            }else{
+                //내가 어린경우
+                if(mg == 'm') {
+                    howCall = (ug == 'm') ? '형~~~~' : '누나~~!!!';
+                }else {
+                    howCall = (ug == 'm') ? '오빠~~~' : '언니~~!!!';
+                }
+            }
+            printCall(howCall);
+        }
+        function getInfo(){
+            let mg = document.getElementById('myGen').value;
+            let ma = document.getElementById('myAge').value;
+            let ug = document.getElementById('yourGen').value;
+            let ua = document.getElementById('yourAge').value;
+            whatShouldCallYou(mg,parseInt(ma),ug,parseInt(ua));
+        }
+        document.getElementById('btn').addEventListener('click', getInfo);
+    </script>
+</body>
+</html>

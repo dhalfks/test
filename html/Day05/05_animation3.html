@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation3</title>
+    <!-- div 왼쪽으로 천천히 이동했다가 다시 돌아오는 애니메이션 작성 -->
+    <style>
+        .box{
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgb(125, 87, 37);
+            background-color: bisque;
+            position: absolute;
+            left: 10px;
+           animation-name: move;
+           animation-duration: 5s;
+           animation-iteration-count: infinite;
+        }
+        @keyframes move{
+            form{
+                /* left: 10px; */
+                width: 50px;
+            }
+            50%{
+                /* left: 90%; */
+                width: 90%;
+            }
+            to{
+                /* left: 10px; */
+                width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

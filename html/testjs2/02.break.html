@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+        while (count < 100) {
+            console.log(count + 1, '회 실행 시작...');
+            if(count == 7){
+                console.log('7회를 실행 한 후 8회 실행중 중지');
+                break;
+            }
+            count++;
+        //   console.log(count + 1, '회 실행하고 다음횟수로 이동준비...');
+        }
+    
+        let idx = 0;
+        let total = 0;
+        do {
+          total++;
+          if(idx % 2 == 1){
+            console.log(`${idx}는 홀수 입니다`);
+            idx++;
+            continue;
+          }
+          console.log(idx);
+          idx++;
+        } while (idx < 100);
+        console.log("---------");
+        console.log('실행횟수:',total);
+        console.log("--------------------------------");
+        
+        for (let i = 0; i < 5; i++) {
+          for (let j = 0; j < 7; j++) {        
+            if(i == 2 || i == 4) {
+              console.log("내부 반복문의 if문 안에 있는", i, j);
+              break;
+            }
+            console.log('내부 반복문의 끝', j);
+          }
+          
+          console.log('외부 반복문의 끝', i);
+        }
+      </script>
+</body>
+</html>

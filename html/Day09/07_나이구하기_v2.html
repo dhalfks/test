@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이구하기</title>
+    <!-- input을 이용하여 이름, 주민등록번호를 입력받아 -->
+    <!-- 이름, 생년월일, 나이, 성별을 출력 -->
+</head>
+<body>
+    이름 : <input type="text" id="name"><br>
+    주민번호 : <input type="text" id="rNum"><br>
+    <button type="button" id="btn" onclick="result()" >계산</button>
+    <h3 id="result">
+
+    </h3>
+    <script>
+        function result(){
+            let name = document.getElementById('name').value; //string
+            let rNum = document.getElementById('rNum').value; //string ******-********
+
+            let now = new Date();  //오늘날짜
+            let birth = rNum.substring(0, rNum.indexOf("-"));
+            console.log(birth);
+            let year = Number(birth.substring(0,2)) ;
+            let age = now.getFullYear() - (year + 1900)+1;
+            console.log(year);
+            console.log(age);
+            
+            let getNum = rNum.charAt(8);
+            let mw ='';
+            if(getNum == 1 || getNum == 3){
+                mw ="남";
+            }else {
+                mw="여";
+            }
+            console.log(mw);
+            document.getElementById('result').innerText = 
+            `이름: ${name}, 생년월일: ${birth}, 나이: ${age}, 성별: ${mw}`;
+        }
+    </script>
+</body>
+</html>

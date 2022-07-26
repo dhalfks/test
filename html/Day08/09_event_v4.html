@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜/시간</title>
+</head>
+<body>
+    <!-- 버튼을 클릭하면 현재 날짜가 표시되도록 수정 -->
+    <button type="button" onclick="date()" id="date1">날짜</button>
+    <h1 id="date">
+
+    </h1>
+    <script>
+        // let now = new Date();
+        // let display = now.toLocaleDateString(); // 날짜/시간 내장 함수
+        // document.write('현재시각은 ' + display);
+
+        // function date(){
+        //     let now = new Date();
+        //     let display = now.toLocaleDateString();
+        //     document.querySelector('#date').innerHTML=`오늘날짜 : ${display}`;
+        // }
+
+        //표현식 방식으로 변경
+        let now = new Date();
+        let display = now.toLocaleDateString();    
+        let date1 = document.querySelector('#date1');
+        date1.onclick = function(){
+            document.querySelector('#date').innerHTML=`오늘날짜 : ${display}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식</title>
+</head>
+<body>
+    <h1>
+        Regular Expression : 정규표현식, 줄여서 정규식 또는 RegExp라는 단어로 표현
+    </h1>
+    <ul>
+        <li>
+            특정 데이터에 대한 탐색, 확인 등을 쉽게 수행하기 위해 만든 규칙
+        </li>
+        <li>
+            정규식이 작동되는 전용 메서드에 규칙적인 부호를 사용
+        </li>
+        <li>
+            일반적인 웹분야에서는 사용률이 낮지만, 데이터분석과 관련된 분야에서는 많이 사용함
+        </li>
+        <li>
+            프로그램 언어별로 비슷함. 
+        </li>
+    </ul>
+    <h2>
+        Expression
+    </h2>
+    <ol>
+        <li>
+            strData.match(/찾는문자/modifiers) : 찾는 문자와 일치하는 값을 탐색 후 데이터를 담은 객체를 리턴
+        </li>
+        <li>
+            strData.match(/[찾는문자]/modifiers) : []안에 찾고자 하는 알파벳 혹은 숫자를 넣을 수 있다.
+        </li>
+        <li>
+            [0-9]는 0부터 9까지에 해당하는 숫자 : -(-:하이픈)은 ? 부터 ?까지 범위를 지정할 때 사용하는 기호<br>
+            [0-9]는 모든 숫자를 의미함
+        </li>
+        <li>
+            [a-zA-Z0-9]: 영문자와 숫자만 가능
+        </li>
+        <li>
+            (str1 | str2) : str1이나 str2에 정확하게 부합하는 데이터를 탐색
+        </li>
+        
+    </ol>
+    <script>
+        let testText = 'This is JavaScript Regular Expression';
+        console.log(testText.match(/[i]/g));
+
+        const fileName = ['abc.jpg','mini.gif','mydoc.doc','code.jpeg','movie.mpg'];
+        //이미지 파일만 출력 => 이미지 확장자 : jpg, gif, png, jpeg
+        for(const file of fileName){
+            if(file.match(/(jpg|gif|png|jpeg)/i)){
+                console.log(`이미지파일 : ${file}`);
+            }else{
+                console.log(`그외파일 : ${file}`);
+            }
+        }
+    </script>
+</body>
+</html>

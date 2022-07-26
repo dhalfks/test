@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>할인 가격 구하기</title>
+	<!-- <link rel="stylesheet" href="css/bargain.css"> -->
+    <style>
+        #contents {
+			width: 450px;
+			margin:0 auto;
+		}
+		#contents > img {
+			float:left;
+			margin-right:25px;
+		}
+		ul {			
+			list-style: none;
+			padding-top:40px;
+		}
+		li {
+			margin-bottom:10px;
+		}
+		li > label {
+			width:80px;
+			float:left;
+			text-align:right;
+		}
+		input[type="text"] {
+			width:110px;
+			padding:5px 10px;			
+			margin:0 5px 0 10px;
+		}
+		li:nth-child(3) {
+			margin-top:20px;
+			text-align: center;
+		}
+		button {
+			padding:5px 10px;
+			border:1px solid #ccc;			
+			font-size:1em;
+		}
+		#showResult {
+			margin-top:20px;
+			font-size:1.5em;			
+		}
+    </style>
+</head>
+<body>	
+	<div id="contents">
+		<img src="/image/sale.png">
+		<ul>
+			<li>
+					<label for="oPrice">원래 가격</label> 
+					<input type="text" id="oPrice">원
+			</li>
+			<li>
+				<label for="rate">할인율</label>
+				<input type="text" id="rate">%
+			</li>
+			<li>
+				<button onclick="showPrice()">할인 가격 계산하기</button>
+			</li>
+		</ul>
+		<div id="showResult"></div>	
+	</div>	
+		
+	<script>
+		function showPrice() {
+			let originPrice = document.querySelector('#oPrice').value;  // 원래 가격
+			let rate = document.querySelector('#rate').value; // 할인율 
+            // rate= Number(rate);
+			let savedPrice = originPrice * (rate/100);  // 할인 금액
+			let resultPrice = originPrice - savedPrice;  // 원래 가격에서 할인 금액을 뺀 최종 가격
+            console.log(typeof rate);			
+			document.querySelector('#showResult').innerHTML = "상품의 원래 가격은 " + originPrice + "원이고, 할인율은 " + rate + "%입니다." + savedPrice + "원을 절약한 " + resultPrice + "원에 살 수 있습니다."; 
+		}		
+		// if문 삭제했습니다.
+	</script>
+</body>
+</html>

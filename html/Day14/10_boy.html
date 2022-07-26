@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boy-girl</title>
+    <style>
+        .container{
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            padding-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="pic" src="/image/boy.png" alt="">
+    </div>
+    <script>
+        let pic = document.querySelector('#pic');
+        pic.addEventListener('mouseover',change);
+        pic.addEventListener('mouseout', origin);
+
+        function change(){
+            pic.src="/image/girl.png";
+        }
+        function origin(){
+            pic.src="/image/boy.png";
+        }
+
+    </script>
+</body>
+</html>

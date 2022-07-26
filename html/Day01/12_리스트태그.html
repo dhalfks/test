@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list태그</title>
+</head>
+<body>
+    <!-- 
+        리스트는 상/하위 목록을 구성하는 상황을 나타낼때 사용
+        - ol : 순서가 있는 리스트, 번호로 표현
+        - ul : 순서가 없는 리스트
+        - li : ol, ul태그안에 들어가는 하위 목록들을 의미하는 태그
+        - ol태그 속성
+            - type : 숫자 형태를 정해주는 속성.
+            - 1이기본, "A","a","i","I"
+            - start : 시작 순서를 정해주는 속성
+        - ul태그 속성
+            - type : 기호모양을 정해주는 속성
+                -desc : 기본모양
+                -circle : 속이 빈 동그라미
+                -square : 사각형
+        - ul, ol 태그는 꼭 리스트 뿐만 아니라 상/하위 구조로 나눌 수 있는
+          상황이면 주로 사용한다. 
+        - 메뉴바 구현시 메인메뉴 -> 서브메뉴 구현시 사용
+     -->
+     오늘의 할일
+     <ol type="a" start="1">
+        <li>출근</li>
+        <li>오전수업</li>
+        <li>점심</li>
+        <li>오후수업</li>
+        <li>퇴근</li>
+    </ol>
+
+    점심메뉴
+    <ul type="circle">
+        <li>라면</li>
+        <li>쌀밥</li>
+        <li>된장찌개</li>
+        <li>김치찌개</li>
+        <li>짜장면</li>
+    </ul>
+
+    <ul>
+        <li>오늘의 할일</li>
+        <ol type="a" start="1">
+            <li>출근</li>
+            <li>오전수업</li>
+            <li>점심</li>
+            <li>오후수업</li>
+            <li>퇴근</li>
+        </ol>
+
+        <li>점심메뉴</li>
+        <ul type="circle">
+            <li>라면</li>
+            <li>쌀밥</li>
+            <li>된장찌개</li>
+            <li>김치찌개</li>
+            <li>짜장면</li>
+        </ul>
+    </ul>
+    
+</body>
+</html>

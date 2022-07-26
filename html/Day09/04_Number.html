@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+</head>
+<body>
+    <h1>
+        자바 스크립트에서 숫자는 아주 중요한역할을 하지만 내용이 어렵진 않음.
+    </h1>
+    <ul>
+        <li>Math.random() : 0이상 1미만 숫자를 랜덤으로 출력 </li>
+        <li>Math.random()*10</li>
+        <li>Math.round() : 반올림</li>
+        <li>Math.floor() / Math.ceil  : 버림/올림</li>
+        <li>Math.max() / Math.min()  : 최대/최소</li>
+    </ul>
+    <script>
+        let random = (Math.random()*10)+1;  //1~10
+        console.log(Math.floor(random));
+        //(max, min)  max 부터 min까지의 랜덤값 생성 리턴.
+        // (max - min + 1 ) : 랜덤값을 생성하는 개수 min 시작값 
+        
+        function getRandom(max, min){
+            return Math.floor(Math.random() * (max - min +1)) + min;
+        }
+        let num = getRandom(10, 1);
+        console.log(num); 
+    </script>
+</body>
+</html>

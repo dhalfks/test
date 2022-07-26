@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>null병합</title>
+</head>
+<body>
+    <h1>
+        null, undefined를 판단하여 해당하면 대체값을 출력하는 연산자
+    </h1>
+    <h3>
+        ES2020 버전부터 지원가능
+    </h3>
+    <ul>
+        <li>
+           null ?? "출력" ;
+        </li>
+        <li>
+            좌측항이 null || undefined 이면 우측값을 출력
+        </li>
+        <li>
+            좌측항이 null || undefined 아니면 좌측값을 그대로 출력
+        </li>
+    </ul>
+    <script>
+        console.log(null ?? "null입니다.");
+        console.log(undefined ?? "정의되지 않았습니다.");
+        console.log(NaN ?? "null입니다.");
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    /* flex 일 때 가로 정렬 */
+    justify-content: center;
+    /* 세로정렬 */
+    align-items: center;
+    background-color: #000;
+
+}
+.ghost{
+    animation: moveUpDown 3s infinite;
+    position: absolute;
+}
+@keyframes moveUpDown{
+    0%{
+        margin-top: 0px;
+    }
+    50%{
+        margin-top: -50px;
+
+    }
+    100%{
+        margin-top: 0px;
+    }
+}
+.ghost .body{
+    /* 다리너비 계산 = 120 / 5개 만큼 너비 설정 */
+    width: 120px;
+    height: 160px;
+    background-color: white;
+    /* 왼쪽위 오른쪽위 오른쪽아래 왼쪽아래 */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+}
+.body .face{
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+    /* 줄바꿈 가능 */
+    flex-wrap: wrap; 
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%);
+}
+.ghost .body .face .eye{
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #333;
+
+}
+.ghost .body .face .mouse{
+    /* 픽셀 수가 71px을 넘게되어 mouse 영역이 줄바꿈됨. */
+    width: 33px;
+    height: 15px;
+    background-color: #333;
+    border-radius: 5px 5px 20px 20px;
+    margin-left: 19px;
+    margin-top: 13px;
+
+}
+.ghost .bottom{
+    display: flex;
+}
+.ghost .bottom .leg{
+    background-color: white;
+    width: 24px;
+    height: 15px;
+    border-radius: 0 0 50% 50%;
+
+}
+.ghost .bottom .leg:nth-child(2n){
+    position: relative;
+    top: -6px;
+    background-color: black;
+    border-radius: 50%;
+}

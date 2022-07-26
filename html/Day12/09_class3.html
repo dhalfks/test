@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 정의할 프로퍼티(멤버 변수) : firstName, lastName, age, eyeColor -->
+    <!-- PersonClass : firstName, lastName, age, eyeColor -->
+    <script>
+        class PersonClass {
+            constructor(first, last, age, eye){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+            }
+            get personInfo(){
+                return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;
+            }
+        }
+        const myInfo = new PersonClass("miran","oh",42,"red");
+        myInfo.age = 20; // age 값 변경
+        myInfo.eyeColor = 'blue';
+        console.log(myInfo);
+        // let info = myInfo.personInfo;
+        console.log(myInfo.personInfo);
+        
+
+        const personObject = {
+            firstName: "",
+            lastName:"",
+            age:0,
+            eyeColor:"",
+            setAllInfo: function (first, last, age, eye){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eye;
+            },
+            get personInfo(){
+                return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;
+            },
+            set setFirstName(first){
+                this.firstName = first;
+            },
+            set setLastName(last){
+                this.lastName = last;
+            },
+            set setAge(age){
+                this.age = age;
+            },
+            set setEyeColor(eye){
+                this.eyeColor = eye;
+            },
+        };
+
+        function PersonObject(first, last, age, eye){
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.getPersonInfo = function(){
+                return `${this.firstName},${this.lastName},${this.age},${this.eyeColor}`;   
+            };
+        }
+       
+        const myInfo2 = new PersonObject("ran","oh",30,"blue");
+        myInfo2.age = 20;
+        console.log(myInfo2);
+        let info2 = myInfo2.getPersonInfo();
+        console.log(info2);
+       
+    </script>
+</body>
+</html>

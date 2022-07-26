@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button type="button" id="startBtn">문제출제</button>
+      </h1>
+      <ol id="q"></ol>
+      <h1>
+        <button type="button" id="compareBtn">정답확인</button>
+      </h1>
+      <h1 id="printRatio"></h1>
+      <script>
+        function makeRandomForDan() {
+          return Math.floor(Math.random()*8)+2;
+        }
+        function makeRandomForIncre() {
+          return Math.floor(Math.random()*9)+1;
+        }
+        let count = 0;
+        let quizArea = document.getElementById('q');
+        const ansObj = {};
+    
+        document.getElementById('startBtn').addEventListener('click', function(){
+          
+          quizArea.innerHTML = "";
+          do {
+            count++;
+            let dan = makeRandomForDan();
+            let incre = makeRandomForIncre();
+            let answer = dan * incre;
+            ansObj[`ans${count}`] = answer;        
+    
+            let quiz = `<li>${dan} x ${incre} = `;
+            quiz += `<input type="text" id="userAns${count}"></li>`;
+            quizArea.innerHTML += quiz;
+          } while (count < 10);
+    
+          console.log(ansObj);
+          count = 0;
+        });
+    
+        let count2 = 0;
+        let correct = 0;
+        document.getElementById('compareBtn').addEventListener('click', function(){
+          while (count2 < 10) {
+            count2++;
+            let userInput = document.getElementById(`userAns${count2}`);
+            if (userInput.value == ansObj[`ans${count2}`]) {
+              correct++;
+              userInput.value += ' : 정답';
+              userInput.style.backgroundColor = 'green';
+            }else {
+              userInput.value += ' : 오답';
+              userInput.style.backgroundColor = 'red';
+            }
+          }
+          document.getElementById('printRatio').innerText 
+          = `정답률 : ${(correct/count2).toFixed(2) * 100}%`;
+        });
+    
+      </script>
+        
+</body>
+</html>

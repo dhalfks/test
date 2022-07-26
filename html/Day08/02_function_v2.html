@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 파라미터</title>
+</head>
+<body>
+    <h1>
+        함수의 파라미터는 변수명을 지정해 사용 / 함수 영역 내부에서 사용되는 값을 전달하는 역할을 한다.
+    </h1>
+    <ul>
+        <li>
+            파라미터의 개수는 제한이 없다. 하지만 너무 많은 파라미터값을 사용하면 관리가 힘들어서 별도 문법적용을 한다.
+        </li>
+        <li>
+            파라미터로 전달된 값은 값과, 타입 모두 그대로 받아서 사용한다.
+        </li>
+        <li>
+            파라미터로 전달되는 값의 개수, 순서 타입 유무 매우 중요하다
+        </li>
+        <li>
+            파라미터 값은 외부 변수명과 중복되어도 상관없지만, 가급적 별도 사용을 권장한다. 
+        </li>
+        
+    </ul>
+    <script>
+        let hers = '이재영';
+
+        function callHerName(herName){
+            let hisName = '정희도';
+            console.log('그대의 이름은...' + herName);
+            console.log('그대의 또다른 이름은...' + hers);
+        }
+        callHerName('안은솔');
+        callHerName(hers);
+        // console.log(hisName); // 함수 내부에서 선언된 변수는 밖에서 사용할 수 없음.
+
+        function whatSheLike(herName, favor){
+            let name = herName+'님';
+            let like = favor+'을(를)';
+            console.log(`${name}은 ${like} 좋아합니다.`);
+        }
+        whatSheLike('안은솔','강아지');
+
+        console.log('-------------------------');
+
+        function iKnowHer(herName, favor){
+            callHerName(herName);
+            whatSheLike(herName, favor);
+            console.log('잘알지?');
+        }
+        iKnowHer('안은솔','강아지');
+    </script>
+</body>
+</html>

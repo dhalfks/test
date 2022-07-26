@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table태그</title>
+</head>
+<body>
+    <!-- 
+        table = 표
+        table태그는 다른 태그와 조합해서 나온다.
+        - tr 태그 : 한 행을 의미
+        - td/th 태그 : 한 행에서 한 열을 의미 (한칸)
+        - td 태그 : 왼쪽정렬, 보통글씨
+        - th 태그 : 가운데정렬, 굵은글씨
+
+        - 3행 4열 테이블을 생성
+        - tr 3개
+        - td 4개 * 3줄 = 12개
+        
+        (css에 가능한 속성)
+        - table 태그 속성 
+        - border : 테두리두께
+        - bordercolor : 테두리 색
+        - width : 가로의 길이 
+
+        - th/td 태그 속성
+        - colspan/rowspan : 셀병합, 병합된 칸은 지워줘야 함.
+
+     -->
+     <table border="2" bordercolor = "#ff0000" width="50%">
+        <tr>
+            <th>학년</th>
+            <th>이름</th>
+            <th colspan="2">시험성적</th>
+            
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>홍길동</td>
+            <td>90</td>
+            <td>80</td>
+        </tr>
+        <tr>
+            
+            <td>유관순</td>
+            <td>89</td>
+            <td>87</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>김영이</td>
+            <td>78</td>
+            <td>79</td>
+        </tr>
+     </table>
+     <br>
+     <!-- 3행 4열의 표를 만들어서 1~12까지 값을 채우시오. -->
+     <table border="1" bordercolor="green" width="30%">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+     </table>
+     <!-- 
+        - thead, tbody, tfoot, cation 태그를 사용할 수 있다. (필수는 아님)
+        - 순서는 thead > tbody > tfoot 순으로 배치
+        - 순서가 달라져도 해당 순서대로 배치됨.
+      -->
+      <br>
+     <table border="1" bordercolor="#000000" width="50%">
+        <caption>성적표</caption>
+        <thead>
+            <tr>
+                <th>과목</th>
+                <th>이름</th>
+                <th>중간</th>
+                <th>기말</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>국어</td>
+                <td>홍길동</td>
+                <td>90</td>
+                <td>80</td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td>김영이</td>
+                <td>80</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td>유관순</td>
+                <td>70</td>
+                <td>60</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">평균</td>
+                
+                <td>80</td>
+                <td>80</td>
+            </tr>
+        </tfoot>
+     </table> 
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display-table</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .title_item{
+            display: block;
+            font-size: 1em;
+        }
+        .desc_item{
+            font-size: 0.7em;
+        }
+        .price{
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+        .title_item, .desc_item{
+            margin-top: 10px;
+        }
+        .boxwrap{
+            display: table;  /* display 형태를 table로 설정*/
+            table-layout: fixed; /* 테이블 고정 */
+            width: 100%; /* 화면 전체 크기 */
+            /* background-color: azure; */
+        }
+        .boxwrap .box{
+            /* border: 1px solid black; */
+            display: table-cell; /* 부모 속성안에 들어가는 표안의 셀 */
+            vertical-align: middle; /* 셀안의 내용을 세로 가운데정렬 */
+            text-align: center; /* 글자 가운데 정렬 */
+            padding: 10px;
+        }
+        .thumb img{
+            width: 40%; /* 이미지 가로너비 조절 */
+        }
+        /* 링크 기능 */
+        .box .link{
+            text-decoration-line:none ;
+            color: black;
+        }
+        /* hover 기능 */
+        .box .link:hover{
+            text-decoration-line:underline ;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxwrap">
+        <!-- 첫 박스 하단 한 set -->
+        <div class="box">
+            <a href="Day04/02_Flexbox.html" class="link">
+                <span class="thumb">
+                    <img src="/image/버클샌들.jpg" alt="">
+                </span>
+                <strong class="title_item">여름 샌들</strong>
+                <p class="desc_item"> 여름에 예쁘고시원한 샌들</p>
+                <p class="price">20,000원</p>
+            </a>   
+        </div>
+        <!-- 다른박스 시작지점 -->
+        <div class="box">
+            <a href="Day04/02_Flexbox.html" class="link">
+                <span class="thumb">
+                    <img src="/image/슬리퍼.jpg" alt="">
+                </span>
+                <strong class="title_item">여름 슬리퍼</strong>
+                <p class="desc_item"> 여름에 예쁘고시원한 슬리퍼</p>
+                <p class="price">23,000원</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="Day04/02_Flexbox.html" class="link">
+                <span class="thumb">
+                    <img src="/image/스니커즈.jpg" alt="">
+                </span>
+                <strong class="title_item">스니커즈</strong>
+                <p class="desc_item"> 사계절 예쁜 스니커즈</p>
+                <p class="price">35,000원</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="Day04/02_Flexbox.html" class="link">
+                <span class="thumb">
+                    <img src="/image/슬리퍼2.jpg" alt="">
+                </span>
+                <strong class="title_item">여름 슬리퍼</strong>
+                <p class="desc_item"> 여름에 예쁘고시원한 슬리퍼</p>
+                <p class="price">15,000원</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환</title>
+</head>
+<body>
+    <h1>
+        casting (형변환) : 데이터 타입을 원하는 형식으로 변경하는 기법
+    </h1>
+    <ul>
+        <li>
+            string => number : Number("str"), parseInt("str"), parseFloat("str")
+        </li>
+        <li>
+            number => String : 123.toString() , (123).toString()
+        </li>
+        <li>
+            String => boolean : Boolean("true")
+        </li>
+        <li>
+            boolean => string : String(true)
+        </li>
+        <li>
+            number => boolean : true = 1 / false = 0 : Boolean(1), Boolean(0)
+        </li>
+        <li>
+            boolean => number : Number(true), Number(false)
+        </li>
+    </ul>
+    <script>
+        let num = 12345;
+        let str = num.toString();  // 숫자를 문자로 형변환
+
+        console.log(num);
+        console.log(typeof num);
+        console.log(str);
+        console.log(typeof str);
+
+        let t = true;
+        let b = String(t);
+        console.log(t);
+        console.log(typeof t);
+        console.log(b);
+        console.log(typeof b);
+    </script>
+</body>
+</html>

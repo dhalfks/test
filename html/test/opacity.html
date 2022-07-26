@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opacity</title>
+    <style>
+        .bg, .front{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* background-color: black; */
+        }
+        .bg{
+            background-image: url(/image/busan.jpg);
+            background-repeat:no-repeat ;
+            background-size: 100% 100%;
+        }
+        .front{
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            /* z-index: 100; */
+            background-color: white;
+            font-size: 100px;
+            animation-name: white;
+            animation-duration: 5s;
+            
+        }
+        .back{
+            background-image: url(/image/busan.jpg);
+            background-repeat:no-repeat ;
+            background-size: 100% 100%;
+            z-index: 100;
+            /* animation: back;
+            animation-delay: 5s;
+            animation-duration: 5s; */
+        }
+        @keyframes white{
+            form{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        @keyframes back{
+            from{
+                opacity: 0;
+            }
+            to{opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="front"></div>
+    <div class="back"></div>
+</body>
+</html>

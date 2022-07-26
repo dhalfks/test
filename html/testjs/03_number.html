@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Numbers</h2>
+
+<p>Numbers can be written with or without decimals:</p>
+
+<p id="demo"></p>
+<p id="age"></p>
+
+<script>
+let x = 3.14;
+let y = 3;
+document.getElementById("demo").innerHTML = x + "<br>" + y;
+
+let mage = 42;
+let cage = 14;
+document.getElementById("age").innerText = mage-cage;
+
+let myNumber = 32;
+let r1 = myNumber.toString(8); //(기수) 2~36까지 진법 변환
+let r2 = myNumber.toString();
+
+console.log(typeof myNumber, myNumber);
+console.log(typeof r1, r1);
+console.log(typeof r2, r2);
+</script>
+
+</body>
+</html>
